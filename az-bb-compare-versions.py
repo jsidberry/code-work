@@ -6,8 +6,8 @@ from azure.mgmt.containerregistry import ContainerRegistryManagementClient
 
 # Function to get the 'meta.yml' file from a Bitbucket repository
 def get_meta_yml_from_bitbucket(repo_owner, repo_slug, access_token):
-    url = f"https://api.bitbucket.org/2.0/repositories/{repo_owner}/{repo_slug}/src/main/meta.yml"
-    headers = {"Authorization": f"Bearer {access_token}"}
+    url      = f"https://api.bitbucket.org/2.0/repositories/{repo_owner}/{repo_slug}/src/main/meta.yml"
+    headers  = {"Authorization": f"Bearer {access_token}"}
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return response.text
